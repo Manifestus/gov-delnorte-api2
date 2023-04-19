@@ -14,7 +14,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   //change to port
-  await app.listen(3000, () => {
+  await app.listen(port || 3000, () => {
     console.log('[WEB]', config.get<string>(`BASE_URL`));
     console.log(port);
   });
